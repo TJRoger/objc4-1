@@ -420,6 +420,7 @@ static GlobalSmallVector<objc_func_loadImage, 4> loadImageFuncs;
 
 void objc_addLoadImageFunc(objc_func_loadImage _Nonnull func) {
     // Not supported on the old runtime. Not that the old runtime is supported anyway.
+    // 旧运行时不支持。 并不是说无论如何都支持旧的运行时
 #if __OBJC2__
     mutex_locker_t lock(runtimeLock);
     
