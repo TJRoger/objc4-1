@@ -1349,8 +1349,10 @@ class list_array_tt {
             newArray->count = newCount;
             array()->count = newCount;
 
+            // 整体后移新增category个数, addedCount
             for (int i = oldCount - 1; i >= 0; i--)
                 newArray->lists[i + addedCount] = array()->lists[i];
+            // 顺序添加addedList列表到array
             for (unsigned i = 0; i < addedCount; i++)
                 newArray->lists[i] = addedLists[i];
             free(array());
